@@ -1,7 +1,7 @@
 async function main() {
   // We get the contract to deploy
-  const MainContract = await ethers.getContractFactory("GenerativeArtworks");
-  const mainContract = await MainContract.deploy("Generative Artworks", "GA");
+  const MainContract = await ethers.getContractFactory("ERC721");
+  const mainContract = await MainContract.deploy("Generative Artworks One-offs", "GA");
 
   console.log("Main contract deployed to: ", mainContract.address);
 }
