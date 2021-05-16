@@ -10,7 +10,7 @@ require('dotenv').config({ path: resolve(__dirname, "./.env") });
 // To export your private key from Metamask, open Metamask and
 // go to Account Details > Export Private Key
 // Be aware of NEVER putting real Ether into testing accounts
-const { ALCHEMY_API_KEY, ROPSTEN_PRIVATE_KEY, ETHERSCAN_API_KEY }  = process.env;
+const { ALCHEMY_API_KEY, TESTNET_PRIVATE_KEY, ETHERSCAN_API_KEY }  = process.env;
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -20,8 +20,12 @@ module.exports = {
   networks: {
     ropsten: {
       url: `https://eth-ropsten.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
-      accounts: [`0x${ROPSTEN_PRIVATE_KEY}`]
-    }
+      accounts: [`0x${TESTNET_PRIVATE_KEY}`]
+    },
+    rinkeby: {
+      url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+      accounts: [`0x${TESTNET_PRIVATE_KEY}`]
+    },
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY
