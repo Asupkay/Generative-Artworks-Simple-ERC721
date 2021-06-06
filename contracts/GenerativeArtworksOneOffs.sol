@@ -4,10 +4,11 @@ pragma solidity ^0.8.0;
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol';
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 
-contract GenerativeArtworksOneOffs is ERC721URIStorage, ERC721Enumerable {
+contract GenerativeArtworksOneOffs is ERC721URIStorage, ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
@@ -30,7 +31,7 @@ contract GenerativeArtworksOneOffs is ERC721URIStorage, ERC721Enumerable {
         isAdmin[msg.sender] = true;
     }
 
-    function mint(address receiver, string memory tokenURIData) public onlyAdmin returns (uint256) {
+    function mint(address receiver, string memory tokenURIData) external onlyAdmin returns (uint256) {
         uint256 newItemId = _tokenIds.current();
         _safeMint(receiver, newItemId);
         _setTokenURI(newItemId, tokenURIData);
