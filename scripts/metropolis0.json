@@ -1,0 +1,20 @@
+{
+  "name": "Metropolis Prototype #0",
+  "image": "QmRMpGsUdKN5AWhoc9SPUZUVadUPnkoPJSVHvi6NjLddCM",
+  "description": "This is a prototype version of The World of Tomorrow which was given out during the Enchiridion Cryptovoxels Scavenger Hunt where teams competed to see who could find the most items in the virtual world in 1 hour.",
+  "external_url": "https://generativeartworks.io/projects/twotprototype/",
+  "attributes": [
+    {
+      "trait_type": "Event",
+      "value": "Enchiridion Cryptovoxels Scavenger Hunt"
+    },
+    {
+      "trait_type": "Source",
+      "value": "Generative Artworks"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Participation"
+    }
+  ]
+}
