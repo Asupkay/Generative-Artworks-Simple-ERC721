@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 
-contract GenerativeArtworksOneOffs is ERC721URIStorage, ERC721Enumerable, Ownable {
+contract GenerativeArtworksERC721 is ERC721URIStorage, ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
